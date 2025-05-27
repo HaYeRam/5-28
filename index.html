@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>감각의 발견</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Impact';
+      src: local('Impact');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #999999;
+      font-family: 'Gothic A1', sans-serif;
+      color: white;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .left {
+      width: 40%;
+      padding: 90px 60px 0 120px;
+      box-sizing: border-box;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 4rem; /* 2배 키움 */
+      font-weight: 900;
+    }
+
+    .title img {
+      width: 200px; /* 2배 키움 */
+    }
+
+    .subtitle {
+      font-family: 'Impact', sans-serif;
+      font-size: 4rem; /* 2배 키움 */
+      line-height: 1.2;
+      margin: 40px 0 30px;
+    }
+
+
+    .sense-list b {
+      display: inline-block;
+      width: 60px;
+    }
+
+    .right {
+      width: 60%;
+      background: url('Group 12.png') left center no-repeat;
+      background-size: 90%;
+      padding-top: 120px;
+      position: relative;
+      border-radius: 30px;
+    }
+    .sense-list {
+  font-size: 1.5rem;
+  line-height: 3.5;
+ 
+  padding: 0px 0;
+}
+
+
+
+.sense-item.no-border {
+  border-bottom: none;
+}
+
+.sense-item {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 50vw;
+  margin-left: -100px;
+  padding-left: 120px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 공통 텍스트색 변경 */
+.sense-item:hover,
+.sense-item:hover b {
+  color: #9F9F9F;
+}
+
+/* 감각별 배경 hover 색상 */
+.sense-item.vision:hover {
+  background-color: #00FEC9;
+}
+
+.sense-item.taste:hover {
+  background-color: #FF8400;
+}
+
+.sense-item.hearing:hover {
+  background-color: #86EF5C;
+}
+
+.sense-item.smell:hover {
+  background-color: #DB3AFF;
+}
+.vision-overlay {
+  position: absolute;
+  top: 180px; /* 눈 위치 조정 */
+  left: 300px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.vision-text {
+  font-family: 'Impact', sans-serif;
+  font-size: 2rem;
+  color: #00FEC9;
+}
+
+.vision-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #00FEC9;
+}
+
+.taste-overlay,
+.hearing-overlay,
+.smell-overlay {
+  position: absolute;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* 미각 */
+.taste-overlay {
+  top: 680px;
+  left: 300px;
+}
+.taste-text {
+  font-family: 'Impact', sans-serif;
+  font-size: 2rem;
+  color: #FF8400;
+}
+.taste-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #FF8400;
+}
+
+/* 청각 */
+.hearing-overlay {
+  top: 220px;
+  left: 700px;
+}
+.hearing-text {
+  font-family: 'Impact', sans-serif;
+  font-size: 2rem;
+  color: #86EF5C;
+}
+.hearing-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #86EF5C;
+}
+
+/* 후각 */
+.smell-overlay {
+  top: 450px;
+  left: 450px;
+}
+.smell-text {
+  font-family: 'Impact', sans-serif;
+  font-size: 2rem;
+  color: #DB3AFF;
+}
+.smell-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #DB3AFF;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="left">
+    <div class="title">
+      <img src="Exclude.svg" alt="아이콘">
+      <div>감각의 <br />발견</div>
+    </div>
+    <div class="subtitle">New Discovery<br>Of Sensation</div>
+    <div class="sense-list">
+      <div class="sense-item vision" onmouseenter="showVision()" onmouseleave="hideVision()"><span><b>시각</b> 인간의 인식 속의 새로운 색 올로</span></div>
+      <div class="sense-item taste" 
+     onmouseenter="showTaste()" 
+     onmouseleave="hideTaste()"><span><b>미각</b> 미각의 언어를 확장시킨 감칠맛</span></div>
+
+      <div class="sense-item hearing"
+      onmouseenter="showHearing()" 
+     onmouseleave="hideHearing()"><span><b>청각</b> 가청화를 통한 초고주파와 초저주파</span></div>
+
+      <div class="sense-item smell"
+      onmouseenter="showSmell()" 
+     onmouseleave="hideSmell()"><span><b>후각</b> 비가 내린 후의 흙냄새, 페트리코르</span></div>
+    </div>
+  </div>
+
+
+  <div class="right">
+    <div class="vision-overlay"id="visionOverlay"> 
+    <span class="vision-text">vision</span>
+    <span class="vision-circle"></span>
+  </div>
+  <div class="taste-overlay" id="tasteOverlay">
+  <span class="taste-text">TASTE</span>
+  <span class="taste-circle"></span>
+</div>
+<div class="hearing-overlay" id="hearingOverlay">
+  <span class="hearing-text">HEARING</span>
+  <span class="hearing-circle"></span>
+</div>
+<div class="smell-overlay" id="smellOverlay">
+  <span class="smell-text">SMELL</span>
+  <span class="smell-circle"></span>
+</div>
+
+</div>
+</body>
+</html>
+
+<script>
+  function showVision() {
+    document.getElementById('visionOverlay').style.display = 'flex';
+  }
+
+  function hideVision() {
+    document.getElementById('visionOverlay').style.display = 'none';
+  }
+
+  function showTaste() {
+  document.getElementById('tasteOverlay').style.display = 'flex';
+}
+function hideTaste() {
+  document.getElementById('tasteOverlay').style.display = 'none';
+}
+
+function showHearing() {
+  document.getElementById('hearingOverlay').style.display = 'flex';
+}
+function hideHearing() {
+  document.getElementById('hearingOverlay').style.display = 'none';
+}
+
+function showSmell() {
+  document.getElementById('smellOverlay').style.display = 'flex';
+}
+function hideSmell() {
+  document.getElementById('smellOverlay').style.display = 'none';
+}
+  const leftArea = document.querySelector('.left');
+
+  leftArea.addEventListener('mouseenter', function () {
+    document.body.style.background = 'black';
+  });
+
+  leftArea.addEventListener('mouseleave', function () {
+    document.body.style.background = '#999999';
+  });
+</script>
+
+
+
